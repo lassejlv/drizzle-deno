@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "dev": "deno run --watch -A src/main.ts",
+    "db:generate": "deno --env -A --node-modules-dir npm:drizzle-kit generate",
+    "db:push": "deno --env -A --node-modules-dir npm:drizzle-kit push",
+    "db": "deno task db:generate && deno task db:push"
+  },
+  "imports": {
+    "@libsql/client": "npm:@libsql/client@^0.14.0",
+    "@std/assert": "jsr:@std/assert@1",
+    "drizzle-kit": "npm:drizzle-kit@^0.28.1",
+    "drizzle-orm": "npm:drizzle-orm@^0.36.2"
+  }
+}
